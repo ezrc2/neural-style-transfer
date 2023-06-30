@@ -10,7 +10,7 @@ st.caption('(Only cpu on Streamlit Community Cloud)')
 
 content_image_file = st.file_uploader(label='Content Image:', type=['png', 'jpg', 'jpeg'], accept_multiple_files=False)
 style_image_file = st.file_uploader(label='Style Image:', type=['png', 'jpg', 'jpeg'], accept_multiple_files=False)
-st.caption('Default content image is Mona Lisa and default style image Starry Night.')
+st.caption('Default content image is Mona Lisa and default style image is Starry Night.')
 
 if content_image_file is None:
     content_image_file = 'images/mona_lisa.jpeg'
