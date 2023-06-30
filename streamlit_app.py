@@ -6,10 +6,11 @@ st.set_page_config(page_title='Neural Style Transfer')
 st.title('Neural Style Transfer')
 
 st.write(f'Device: {nst.get_device()}')
+st.caption('(Only cpu on Streamlit Community Cloud)')
 
 content_image_file = st.file_uploader(label='Content Image:', type=['png', 'jpg', 'jpeg'], accept_multiple_files=False)
 style_image_file = st.file_uploader(label='Style Image:', type=['png', 'jpg', 'jpeg'], accept_multiple_files=False)
-st.caption('Default content image is Mona Lisa, default style image Starry Night.')
+st.caption('Default content image is Mona Lisa and default style image Starry Night.')
 
 if content_image_file is None:
     content_image_file = 'images/mona_lisa.jpeg'
@@ -20,7 +21,7 @@ content_image = nst.loader(Image.open(content_image_file))
 style_image = nst.loader(Image.open(style_image_file))
 
 epochs = st.slider(label='Number of epochs:', min_value=500, max_value=1500, step=100)
-st.caption('Start with 600 to 800 epochs. If the result image is unclear, increase the number of epochs.')
+st.caption('Start with 600 to 800 epochs. If the result image is unclear/undeveloped, increase the number of epochs.')
 
 b = st.button(label='Run')
 if b:
