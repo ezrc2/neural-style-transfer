@@ -5,6 +5,8 @@ from PIL import Image
 st.set_page_config(page_title='Neural Style Transfer')
 st.title('Neural Style Transfer')
 
+st.write(f'Device: {nst.get_device()}')
+
 content_image_file = st.file_uploader(label='Content Image:', type=['png', 'jpg', 'jpeg'], accept_multiple_files=False)
 style_image_file = st.file_uploader(label='Style Image:', type=['png', 'jpg', 'jpeg'], accept_multiple_files=False)
 st.caption('Default content image is Mona Lisa, default style image Starry Night.')
